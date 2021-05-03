@@ -7,13 +7,7 @@ import sklearn
 from sklearn.preprocessing import StandardScaler
 app = Flask(__name__)
 model = pickle.load(open('random_forest_regression_model.pkl', 'rb'))
-#model = []
-#with (open("random_forest_regression_model.pkl", "rb")) as openfile:
- #   while True:
-  #      try:
-   #         model.append(pickle.load(openfile))
-    #    except EOFError:
-     #       break
+
 @app.route('/',methods=['GET'])
 def Home():
     return render_template('index.html')
@@ -38,7 +32,7 @@ def predict():
         else:
             Fuel_Type_Petrol=0
             Fuel_Type_Diesel=0
-        Year=2020-Year
+        Year=2021-Year
         Seller_Type_Individual=request.form['Seller_Type_Individual']
         if(Seller_Type_Individual=='Individual'):
             Seller_Type_Individual=1
